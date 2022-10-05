@@ -5,6 +5,7 @@ RUN apk update -q && apk add -q texlive-full gnuplot make biber && apk add -q bi
 WORKDIR /data
 COPY fsroot /
 RUN chmod +x /bin/latex-grunt.sh
+RUN chmod +x /bin/generic.sh
 RUN cd /tmp/latexbuild && npm i -g grunt && npm i
 ENTRYPOINT [ "" ]
 CMD [ "/bin/latex-grunt.sh" ]
